@@ -5,6 +5,7 @@
 #include "./SelectionSort.hpp"
 #include "./InsertionSort.hpp"
 #include "./MergeSort.hpp"
+#include "./QuickSort.hpp"
 
 using std::string;
 using std::ifstream;
@@ -32,7 +33,7 @@ int main(int argc, char **argv){
     // SelectionSort selectionSort;
     // sort(&selectionSort, list);
 
-    Sortizer *sortizer = new MergeSort();
+    Sortizer *sortizer = new QuickSort();
     sort(sortizer, list);
 
     ofstream outputFile;
