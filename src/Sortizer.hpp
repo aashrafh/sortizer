@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <vector>
 #include <chrono>
+#include <ratio>
 
 using std::vector;
 using std::swap;
@@ -12,17 +13,17 @@ using namespace std::chrono;
 // Algorithm base class
 class Sortizer
 {
-private:
-    virtual void sortUtil(vector<long long int> &list, int size) = 0;
+protected:
+    virtual void sortUtil(vector<long long> &list, int size) = 0;
 public:
     Sortizer();
-    milliseconds sort(vector<long long int> &list);
+    double sort(vector<long long> &list);
 };
 
 Sortizer::Sortizer()
 {
 }
-milliseconds Sortizer::sort(vector<long long int> &list){
+double Sortizer::sort(vector<long long> &list){
     // Start the timer
     auto startingTimepoint = high_resolution_clock::now();
     // Call the required sorting algorithm
@@ -30,8 +31,8 @@ milliseconds Sortizer::sort(vector<long long int> &list){
     // Endpoint of the timer
     auto endingTimepoint = high_resolution_clock::now();
     // Calculate the duration elapsed in ms
-    auto duration = duration_cast<milliseconds>(endingTimepoint - startingTimepoint);
+    duration<double, std::milli> elapsedTime = endingTimepoint - startingTimepoint;
     
-    return duration;
+    return elapsedTime.count();
 }
 #endif
