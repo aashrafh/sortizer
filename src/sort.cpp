@@ -4,6 +4,7 @@
 #include "./Sortizer.hpp"
 #include "./SelectionSort.hpp"
 #include "./InsertionSort.hpp"
+#include "./MergeSort.hpp"
 
 using std::string;
 using std::ifstream;
@@ -24,16 +25,14 @@ int main(int argc, char **argv){
     inputList.open(inputPath, std::ifstream::in);
     long long element;
     vector<long long> list;
-    std::cout<<inputPath<<"\n";
     while(inputList >> element){
         list.push_back(element);
-        // std::cout<<element<<"\n";
     }
 
     // SelectionSort selectionSort;
     // sort(&selectionSort, list);
 
-    Sortizer *sortizer = new InsertionSort();
+    Sortizer *sortizer = new MergeSort();
     sort(sortizer, list);
 
     ofstream outputFile;
