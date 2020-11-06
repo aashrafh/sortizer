@@ -24,7 +24,7 @@ void InsertionSort::sortUtil(vector<long long> &list, int size){
         long long key = list[idx];
         // Insert list[idx] into the sorted sequence list[0..idx-1]
         int it = idx-1;
-        while(it > 0 && list[it] > key){
+        while(it >= 0 && list[it] > key){
             list[it+1] = list[it];
             it--;
         }

@@ -3,6 +3,7 @@
 #include <fstream>
 #include "./Sortizer.hpp"
 #include "./SelectionSort.hpp"
+#include "./InsertionSort.hpp"
 
 using std::string;
 using std::ifstream;
@@ -29,8 +30,11 @@ int main(int argc, char **argv){
         // std::cout<<element<<"\n";
     }
 
-    SelectionSort selectionSort;
-    sort(&selectionSort, list);
+    // SelectionSort selectionSort;
+    // sort(&selectionSort, list);
+
+    Sortizer *sortizer = new InsertionSort();
+    sort(sortizer, list);
 
     ofstream outputFile;
     outputFile.open(outputPath);
