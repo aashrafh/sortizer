@@ -11,7 +11,7 @@ private:
     void merge(vector<long long> &list, int left, int mid, int right);
     void mergeSort(vector<long long> &list, int left, int right);
 protected:
-    void sortUtil(vector<long long> &list, int size);
+    void sortUtil(vector<long long> &list, int start, int size);
 public:
     MergeSort();
 };
@@ -27,8 +27,8 @@ Space Complexity: O(n)
 Adaptive: No
 Important Note: For small n, Insertion sort is better while Merge sort is better for large n
 */
-void MergeSort::sortUtil(vector<long long> &list, int size){
-    this->mergeSort(list, 0, size-1);
+void MergeSort::sortUtil(vector<long long> &list, int start, int size){
+    this->mergeSort(list, start, start+size-1);
 }
 void MergeSort::mergeSort(vector<long long> &list, int left, int right){
     if(left >= right) return; // Base case

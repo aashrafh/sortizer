@@ -11,7 +11,7 @@ using std::ifstream;
 using std::ofstream;
 
 void sort(Sortizer *sortizer,vector<long long> &list){
-    double duration = sortizer->sort(list);
+    double duration = sortizer->sort(list, 0, (int)list.size());
     std::cout<<"Time: "<<duration<<"ms \n";
 }
 

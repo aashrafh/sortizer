@@ -14,20 +14,20 @@ using namespace std::chrono;
 class Sortizer
 {
 protected:
-    virtual void sortUtil(vector<long long> &list, int size) = 0;
+    virtual void sortUtil(vector<long long> &list, int start, int size) = 0;
 public:
     Sortizer();
-    double sort(vector<long long> &list);
+    double sort(vector<long long> &list, int start, int size);
 };
 
 Sortizer::Sortizer()
 {
 }
-double Sortizer::sort(vector<long long> &list){
+double Sortizer::sort(vector<long long> &list, int start, int size){
     // Start the timer
     auto startingTimepoint = high_resolution_clock::now();
     // Call the required sorting algorithm
-    this->sortUtil(list, (int)list.size());
+    this->sortUtil(list, start, size);
     // Endpoint of the timer
     auto endingTimepoint = high_resolution_clock::now();
     // Calculate the duration elapsed in ms

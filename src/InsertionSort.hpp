@@ -4,7 +4,7 @@
 class InsertionSort: public Sortizer
 {
 protected:
-    void sortUtil(vector<long long> &list, int size);
+    void sortUtil(vector<long long> &list, int start, int size);
 public:
     InsertionSort();
 };
@@ -19,8 +19,8 @@ Time Complexity: O(n^2)
 Space Complexity: O(1)
 Adaptive: Yes. O(n) time when nearly sorted
 */
-void InsertionSort::sortUtil(vector<long long> &list, int size){
-    for(int idx = 1; idx < size; idx++){
+void InsertionSort::sortUtil(vector<long long> &list, int start, int size){
+    for(int idx = start+1; idx < size; idx++){
         long long key = list[idx];
         // Insert list[idx] into the sorted sequence list[0..idx-1]
         int it = idx-1;
