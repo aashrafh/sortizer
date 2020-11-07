@@ -11,6 +11,7 @@ using std::stoi;
 using std::string;
 using std::ifstream;
 using std::ofstream;
+using std::cout;
 
 enum algo {SELECTION_SORT, INSERTION_SORT, MERGE_SORT, QUICK_SORT};
 
@@ -37,7 +38,6 @@ bool validArgs(int argc, char **argv, algo &algoType, ifstream &inputFile, ofstr
     // Try to open the files
     if(!openFile(argv[2], inputFile)) valid = false;
     if(!openFile(argv[3], outputFile) || !openFile(argv[4], statsFile)) valid = false;
-
     return valid;
 }
 void closeFiles(ifstream &inputFile, ofstream &outputFile, ofstream &statsFile){
