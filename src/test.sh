@@ -32,3 +32,6 @@ for filepath in ../sorted/input/*.txt; do
         ./a.out "$i" "$filepath" "../sorted/output/sorted-$filename-sorted-$i.txt" "../sorted/stats/sorted-$filename-stats.txt"
     done
 done
+
+python plot_charts.py
+python plot_tables.py
