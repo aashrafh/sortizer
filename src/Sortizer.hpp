@@ -2,12 +2,14 @@
 #define SORTIZER_H
 #include <iostream>
 #include <algorithm>
+#include <climits>
 #include <vector>
 #include <chrono>
 #include <ratio>
 
-using std::vector;
 using std::swap;
+using std::vector;
+using std::numeric_limits;
 using namespace std::chrono;
 
 // Algorithm base class

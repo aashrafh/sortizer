@@ -1,15 +1,13 @@
 #ifndef MERGE_SORT_H
 #define MERGE
 #include "./Sortizer.hpp"
-#include <climits>
-
-using std::numeric_limits;
 
 class MergeSort: public Sortizer
 {
-protected:
+private:
     void mergeSort(vector<long long> &list, int left, int right);
     void merge(vector<long long> &list, int left, int mid, int right);
+protected:
     void sortUtil(vector<long long> &list, int start, int size);
 public:
     MergeSort();

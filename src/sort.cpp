@@ -6,6 +6,7 @@
 #include "./InsertionSort.hpp"
 #include "./MergeSort.hpp"
 #include "./QuickSort.hpp"
+#include "./HybridSort.hpp"
 
 using std::stoi;
 using std::string;
@@ -13,7 +14,7 @@ using std::ifstream;
 using std::ofstream;
 using std::cout;
 
-enum algo {SELECTION_SORT, INSERTION_SORT, MERGE_SORT, QUICK_SORT};
+enum algo {SELECTION_SORT, INSERTION_SORT, MERGE_SORT, QUICK_SORT, HYBRID_SORT};
 
 // File Handling
 bool openFile(string filePath, ifstream &file){
