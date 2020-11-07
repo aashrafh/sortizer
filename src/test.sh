@@ -20,7 +20,7 @@ done
 
 for filepath in ../random/input/*.txt; do
     filename=$(basename $filepath .txt)
-    for ((i=0; i<=3; i++)); do
+    for ((i=0; i<=4; i++)); do
         ./a.out "$i" "$filepath" "../random/output/random-$filename-sorted-$i.txt" "../random/stats/random-$filename-stats-$i.txt"
     done
     cp ../random/output/random-$filename-sorted-1.txt ../sorted/input/
@@ -28,7 +28,7 @@ done
 
 for filepath in ../sorted/input/*.txt; do
     filename=$(basename $filepath .txt)
-    for ((i=0; i<=3; i++)); do
+    for ((i=0; i<=4; i++)); do
         ./a.out "$i" "$filepath" "../sorted/output/random-$filename-sorted-$i.txt" "../sorted/stats/random-$filename-stats-$i.txt"
     done
 done
