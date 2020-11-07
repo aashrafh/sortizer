@@ -36,9 +36,9 @@ def plot_data(data_path, stats_files, title, fig_title):
 stats_files = os.listdir("../random/stats")
 stats_files.sort()   # 100 1000 10000 100000 5000 50000 500000 75000
 plot_data("../random/stats", stats_files,
-          'Performance on random generated datasets', 'random_performance_table.png')
+          'Performance on random generated datasets(time on ms)', 'random_performance_table.png')
 
 stats_files = os.listdir("../sorted/stats")
 stats_files.sort()
 plot_data("../sorted/stats", stats_files,
-          'Performance on sorted datasets', 'sorted_performance_table.png')
+          'Performance on sorted datasets(time on ms)', 'sorted_performance_table.png')

@@ -10,7 +10,6 @@ def plot_data(data_path, stats_files, title, fig_title):
         stats_list = [float(x.strip()) for x in stats_list]
         for j in range(5):
             algos_stats[j].append(stats_list[j])
-            
     bar_width = 0.1
     x = np.arange(8)
     colors = ['b', 'g', 'r', 'c', 'm']
