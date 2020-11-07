@@ -68,6 +68,9 @@ Sortizer* createSortizer(algo algoType){
     case QUICK_SORT:
         sortizer = new QuickSort();
         break;
+    case HYBRID_SORT:
+        sortizer = new HybridSort();
+        break;
     
     default:
         sortizer = new MergeSort();
