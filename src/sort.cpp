@@ -3,8 +3,8 @@
 #include <fstream>
 #include "./Sortizer.hpp"
 #include "./SelectionSort.hpp"
-#include "./InsertionSort.hpp"
-#include "./MergeSort.hpp"
+// #include "./InsertionSort.hpp"
+// #include "./MergeSort.hpp"
 #include "./QuickSort.hpp"
 #include "./HybridSort.hpp"
 
@@ -22,7 +22,7 @@ bool openFile(string filePath, ifstream &file){
     return !file.fail();
 }
 bool openFile(string filePath, ofstream &file){
-    file.open(filePath);
+    file.open(filePath, std::ios::app);
     return !file.fail();
 }
 bool validArgs(int argc, char **argv, algo &algoType, ifstream &inputFile, ofstream &outputFile, ofstream &statsFile){

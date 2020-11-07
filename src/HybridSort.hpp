@@ -1,14 +1,20 @@
 #ifndef HYBRID_SORT_H
 #define HYBRID_SORT_H
 #include "./Sortizer.hpp"
+#include "./MergeSort.hpp"
+#include "./InsertionSort.hpp"
+#include <random>
 class HybridSort: public Sortizer
 {
 private:
-    void insertionSort(vector<long long> &list, int start, int size);
+    void insertionSort(vector<long long> &list, int left, int size);
     void merge(vector<long long> &list, int left, int mid, int right);
     void hybridSort(vector<long long> &list, int left, int right);
+    void hybridSort2(vector<long long> &list, int left, int right);
+    int partition(vector<long long> &list, int left, int right);
+    int randomizedPartition(vector<long long> &list, int left, int right);
 protected:
-    void sortUtil(vector<long long> &list, int start, int size);
+    void sortUtil(vector<long long> &list, int left, int size);
 public:
     HybridSort();
     ~HybridSort();
@@ -20,12 +26,12 @@ HybridSort::HybridSort()
 HybridSort::~HybridSort()
 {
 }
-void HybridSort::sortUtil(vector<long long> &list, int start, int size){
-    this->hybridSort(list, start, start+size-1);
+void HybridSort::sortUtil(vector<long long> &list, int left, int size){
+    this->hybridSort(list, left, left+size-1);
 }
 void HybridSort::hybridSort(vector<long long> &list, int left, int right){
     if(left >= right) return;               // Base case
-    if(right-left+1 <= 50){                 // Insertion sort is better for smaller sets of data
+    if(right-left+1 <= 32){                 // Insertion sort is better for smaller sets of data
         this->insertionSort(list, left, right);
         return;
     }
