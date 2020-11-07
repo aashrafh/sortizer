@@ -13,9 +13,13 @@ protected:
     void sortUtil(vector<long long> &list, int start, int size);
 public:
     QuickSort();
+    ~QuickSort();
 };
 
 QuickSort::QuickSort()
+{
+}
+QuickSort::~QuickSort()
 {
 }
 /*

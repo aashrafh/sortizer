@@ -17,10 +17,14 @@ protected:
     virtual void sortUtil(vector<long long> &list, int start, int size) = 0;
 public:
     Sortizer();
+    virtual ~Sortizer();
     double sort(vector<long long> &list, int start, int size);
 };
 
 Sortizer::Sortizer()
+{
+}
+Sortizer::~Sortizer()
 {
 }
 double Sortizer::sort(vector<long long> &list, int start, int size){

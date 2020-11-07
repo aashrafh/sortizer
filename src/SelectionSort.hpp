@@ -7,9 +7,13 @@ protected:
     void sortUtil(vector<long long> &list, int start, int size);
 public:
     SelectionSort();
+    ~SelectionSort();
 };
 
 SelectionSort::SelectionSort()
+{
+}
+SelectionSort::~SelectionSort()
 {
 }
 /*

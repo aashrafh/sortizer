@@ -7,16 +7,19 @@ using std::numeric_limits;
 
 class MergeSort: public Sortizer
 {
-private:
-    void merge(vector<long long> &list, int left, int mid, int right);
-    void mergeSort(vector<long long> &list, int left, int right);
 protected:
+    void mergeSort(vector<long long> &list, int left, int right);
+    void merge(vector<long long> &list, int left, int mid, int right);
     void sortUtil(vector<long long> &list, int start, int size);
 public:
     MergeSort();
+    ~MergeSort();
 };
 
 MergeSort::MergeSort()
+{
+}
+MergeSort::~MergeSort()
 {
 }
 /*
