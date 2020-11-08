@@ -10,9 +10,6 @@ private:
     void insertionSort(vector<long long> &list, int left, int size);
     void merge(vector<long long> &list, int left, int mid, int right);
     void hybridSort(vector<long long> &list, int left, int right);
-    void hybridSort2(vector<long long> &list, int left, int right);
-    int partition(vector<long long> &list, int left, int right);
-    int randomizedPartition(vector<long long> &list, int left, int right);
 protected:
     void sortUtil(vector<long long> &list, int left, int size);
 public:
